@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from bson.json_util import dumps
 
-client = MongoClient("mongodb+srv://dbUser:dbUserPassword@sandbox.pdrwt.mongodb.net/test?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://<user>:<password>@sandbox.pdrwt.mongodb.net/test?retryWrites=true&w=majority")
 db = client.tododb
 todos = db.todo
 

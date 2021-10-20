@@ -1,1 +1,7 @@
 Material referente à aula prática sobre Data Lake + Engenharia de Dados + Persistência Poliglota 
+
+Referências
+- Building a Simple Python Web APP using Flask framework and MongoDB https://morioh.com/p/9451f1260fe2
+- A microblog application powered by Flask and Neo4j http://nicolewhite.github.io/neo4j-flask/
+- Redis as a cache for MySQL with PHP https://www.digitalocean.com/community/tutorials/how-to-set-up-redis-as-a-cache-for-mysql-with-php-on-ubuntu-20-04
+

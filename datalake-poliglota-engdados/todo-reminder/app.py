@@ -11,7 +11,7 @@ heading = "Lembrete de tarefas"
 #db = client.mymongodb    #Select the database
 #todos = db.todo #Select the collection name
 
-client = MongoClient("mongodb+srv://dbUser:dbUserPassword@sandbox.pdrwt.mongodb.net/test?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://<username>:<password>@sandbox.pdrwt.mongodb.net/test?retryWrites=true&w=majority")
 db = client.tododb
 todos = db.todo
 

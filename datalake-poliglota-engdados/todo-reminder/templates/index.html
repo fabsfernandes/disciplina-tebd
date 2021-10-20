@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<title>{{t}}</title>
+		<!-- href="/static/assets/style.css"-->
+		<link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/style.css')}}" >
+		<link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/emoji.css')}}" >
+		<script src="{{ url_for('static',filename='assets/twemoji.min.js')}}"></script>
+		<script src="{{ url_for('static',filename='assets/emoji.js')}}"></script>
+	</head>
+<body>
+	<h1>{{ h }}</h1>
+	<ul>
+		<li><a href="/list" class="{{ a1 }}">TODAS</a></li>
+		<li><a href="/" class="{{ a2 }}">A fazer</a></li>
+		<li><a href="/completed" class="{{ a3 }}">Feitas</a></li>
+	</ul>
+	<hr>
+	{% if todos[0] %}
+	<div span="right">
+	<form action="/search"	method="GET" >
+		<table class="none" id="close">
+		<tr>
+		<td></td><td></td>
+		<td><big><b>Buscar por:</b></big></td>
+		<td><select name="refer" required>
+			<option value="name">Nome da tarefa</option>
+			<option value="desc">Descrição</option>
+			<option value="date">Data</option>
+			<option value="pr">Prioridade</option>
+		</select></td>
+		<td><input type="text" name="key" placeholder="Buscar tarefa" size="15" /></td>
+		<td><button type="submit">Buscar</button></td>
+		</tr>
+		</table>
+	</form>
+	</div>
+	<b><big>LISTA de tarefas :</big></b>
+	<table>
+	    <tr id="row">
+	    	<th class="status">Status</th>
+	    	<th class="name">Nome da tarefa</th>
+	    	<th class="desc">Descrição</th>
+	    	<th class="date">Data</th>
+	    	<th class="pr">Prioridade</th>
+		<th class="func1">Remover</th>
+		<th class="func2">Editar</th>
+	    </tr>
+	{% for todo in todos %}
+		<tr class="datas">
+			<td><a href="./done?_id={{ todo['_id'] }}"><input type="image" src="static/images/{{todo['done']}}.png" alt="Submit ME"></a></td>
+			<td class="name">{{ todo["name"] }}</td>
+			<td class="desc">{{ todo["desc"] }}</td>
+			<td class="date">{{ todo["date"] }}</td>
+			<td class="pr">{{ todo["pr"] }}</td>
+			<td class="func1"><a href="./remove?_id={{ todo['_id'] }}"><button type="submit">REMOVER</button></a></td>
+			<td class="func1"><a href="./update?_id={{ todo['_id'] }}"><button type="submit">EDITAR</button></a></td>
+		</tr>
+	{% endfor %}
+	</table>
+	{% else %}
+		<h4>Nenhuma tarefa na lista !!</h4>
+	{% endif %}
+	<hr/>
+	<form action="/action" method="POST">
+	<table class="none">
+		<tr>
+			<td><b><big><label>Adicione uma tarefa : </label></big></b></td>
+		</tr>
+		<tr>
+		<td><input type="text" name="name" placeholder="nomde da tarefa" /></td>
+		<td><textarea name="desc" rows="1" cols="30" placeholder="Descrição aqui..." required></textarea></td>
+		<td><input type="text" name="date" placeholder="Data" /></td>
+		<td><input type="text" name="pr" placeholder="Prioridade" /></td>
+		<td><button type="submit"> Criar </button></td>
+		</tr>
+	</form>
+	</table>
+	<script>
+
+	</script>
+</body>
+</html>

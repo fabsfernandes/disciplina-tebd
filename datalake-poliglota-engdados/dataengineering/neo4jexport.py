@@ -2,7 +2,7 @@ from py2neo import Graph, Node, Relationship, NodeMatcher
 import json
 
 
-graph = Graph("http://54.211.202.75:7474", auth=('neo4j', 'gasoline-neutron-candle'))
+graph = Graph("url", auth=('user', 'password'))
 
 
 def export():

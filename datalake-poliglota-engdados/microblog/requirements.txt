@@ -1,0 +1,5 @@
+py2neo
+passlib
+flask
+#sudo apt-get install libffi-dev
+bcrypt

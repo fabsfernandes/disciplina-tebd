@@ -2,7 +2,7 @@ from google.cloud import storage
 import mongodbexport, neo4jexport
 
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="symbolic-voyage-322500-a94e7e91accc.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="credentials.json"
 
 
 def upload_blob(bucket_name, source_file_name, destination_blob_name):

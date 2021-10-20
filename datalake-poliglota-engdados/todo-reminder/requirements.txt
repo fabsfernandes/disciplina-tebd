@@ -1,0 +1,4 @@
+pymongo
+bson
+pymongo[srv]
+flask

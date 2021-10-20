@@ -4,12 +4,8 @@ from datetime import datetime
 import os
 import uuid
 
-url = 'http://54.211.202.75:7474'
-#username = 'neo4j2'
-#password = 'gasoline-neutron-candle'
 
-#graph = Graph(url + '/db/data/', username=username, password=password)
-graph = Graph("http://54.211.202.75:7474", auth=('neo4j', 'gasoline-neutron-candle'))
+graph = Graph("url", auth=('user', 'password'))
 
 class User:
 
